@@ -7,7 +7,7 @@ import Footer from './Footer';
 import MainPage from './ecom/MainPage';
 import CartPage from './ecom/CartPage';
 import ProdDetails from './ecom/ProdDetails';
-import RatingsPage from './ecom/RatingsPage';
+import ReviewPage from './ecom/ReviewPage';
 class App extends Component {
  
   render() {
@@ -22,7 +22,7 @@ class App extends Component {
                       <Route path="/ecom/categories/:id" component={ CategoryPage } />
                       <Route path="/ecom/cartPage"  component={ CartPage } />
                       <Route path="/ecom/prodDetails/:id"  component={ ProdDetails } />
-                      <Route path="/ecom/ReviewPage/:id" component={ RatingsPage } />
+                      <Route path="/ecom/ReviewPage/:id" component={ ReviewPage } />
                     </Switch>
                 <Footer />
                 

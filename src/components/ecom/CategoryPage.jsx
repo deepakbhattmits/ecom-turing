@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { fetchCategoriesData } from '../../actions';
+import { 
+        fetchCategoryProd,
+        fetchCategoriesData,
+        fetchAttributeSize,
+        fetchAttributeColor
+     } from '../../actions';
 import ProductPage from './ProductPage';
 
 class CategoryPage extends Component {
+    componentDidMount () {
+        this.props.fetchCategoryProd( this.props.match.params.id );
+        this.props.fetchCategoriesData( this.props.match.params.id );
+        this.props.fetchAttributeSize();
+        this.props.fetchAttributeColor();
+    }
     render () {
         // console.log("test 0",this.props);
         const catId = this.props.ecomSelCat.selCat.category_id;
@@ -11,12 +22,15 @@ class CategoryPage extends Component {
         const catDescription = this.props.ecomSelCat.selCat.description;
         return (
             <div className="ui">
-                <h2 className="ui center aligned icon header">
-                <i className="circular users icon"></i>
-                    { catName }
-                </h2>
-                <p>{ catDescription } </p>
-                <ProductPage catId={ catId } /> 
+              
+                    <h2 className="ui center aligned header">
+                    
+                        { catName }
+                    </h2>
+                    <p>{ catDescription } </p>
+               
+                 <ProductPage catId={ catId } /> 
+             
             </div>
         );
     }
@@ -29,4 +43,4 @@ const mapStateToProps = ( state, ownProps ) => {
     }
 }
 // fetchCategoriesData 
-export default connect(mapStateToProps,null)(CategoryPage);
+export default connect(mapStateToProps,{fetchAttributeSize, fetchAttributeColor, fetchCategoryProd, fetchCategoriesData})(CategoryPage);

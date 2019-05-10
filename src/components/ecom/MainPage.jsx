@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import RainBow from '../hoc/RainBow';
 
 class MainPage extends Component {
   constructor(props){
@@ -48,4 +49,4 @@ class MainPage extends Component {
         );
     }
 };
-export default MainPage;
+export default RainBow(MainPage);
