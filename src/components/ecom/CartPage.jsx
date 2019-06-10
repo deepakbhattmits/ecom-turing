@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import RainBow from '../hoc/RainBow';
+import PropTypes from 'prop-types';
 
 class CartPage extends Component {
     state=  { 
                 inputVal: '',
-              
+            
             }
     
     render () {
        //  const divstyle = { backgroundColor: 'cyan', color: '#000' }
+       console.log(typeof this.state.inputVal);
         return (
             <div className="cart-page">
                 cart count
@@ -22,4 +24,7 @@ class CartPage extends Component {
         );
     }
 };
+CartPage.propTypes = {
+    inputVal: PropTypes.string,
+}
 export default RainBow( CartPage );

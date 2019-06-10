@@ -5,6 +5,7 @@ import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 import _ from 'lodash';
 import ReviewPage from './ReviewPage';
+import PropTypes from 'prop-types';
 import { fetchProdDetails, fetchProd, fetchProdReviews, addToCart, addShoppingCart } from '../../actions';
 
 class ProdDetails extends Component {
@@ -109,7 +110,7 @@ class ProdDetails extends Component {
                             // eslint-disable-next-line no-useless-computed-key
                             ['image'] : this.props.prodData ? this.props.prodData.image : '',
                             // eslint-disable-next-line no-useless-computed-key
-                            ['subtotal'] :this.props.prodData ? this.state.quantity * this.props.prodData.discounted_price : '',
+                            ['subtotal'] :this.props.prodData ? parseFloat((this.state.quantity * this.props.prodData.discounted_price).toFixed(2)) : '',
             }]        
         }, ()=> {  this.validate(); });
        
@@ -159,7 +160,7 @@ class ProdDetails extends Component {
         const average =_.meanBy( this.props.prodReview, (p) => p.rating); 
         const round = _.round( average, 2);
         return (
-            <div className={`ui grid`}> 
+            <div className={`ui grid left aligned`}> 
                 <div className="seven wide column">
                     <div id={ product_id}>
                         <div>
@@ -306,5 +307,8 @@ const mapStateToProps = ( state ) => {
         prodReview: state.ecomdata.selProdReview,
         uniqueCartId: state.ecomdata.uniqueCartId,
     }
+}
+ProdDetails.propTypes = {
+    price: PropTypes.number,
 }
 export default connect(mapStateToProps, mapDispatchToProps )(ProdDetails);

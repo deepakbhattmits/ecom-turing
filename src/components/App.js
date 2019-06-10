@@ -12,7 +12,8 @@ class App extends Component {
  
   render() {
     return (
-        <div className="ui container">
+        <div className="ui grid center aligned">
+        <div className='ui fifteen wide column'>
          
             <Router history={ createBrowserHistory } >
                 
@@ -27,6 +28,7 @@ class App extends Component {
                 <Footer />
                 
             </Router>
+        </div>
         </div>
     );
   }

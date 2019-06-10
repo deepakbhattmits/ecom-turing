@@ -176,7 +176,7 @@ class ProductPage extends Component {
 
     render() {
           return (
-            <div className='ui grid'> 
+            <div className='ui grid left aligned'> 
                 <div className='four wide column'>
                     <h4 className='ui header'>Filters</h4>
                     <div className='ui list'>
