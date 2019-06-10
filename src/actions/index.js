@@ -14,6 +14,7 @@ import {
 import backendapi from '../apis/backendapi';
 export const fetchDepartments = () => async ( dispatch ) => {
     const response = await backendapi.get(`departments`);
+    // console.log('hello DE');
     dispatch({ type: FETCH_DEPARTMENTS, payload: response.data })
 }
 export const fetchCategories = ( id ) => async ( dispatch ) => {

@@ -15,7 +15,7 @@ class Navigation extends Component {
             active:false, 
         }
     componentDidMount (){
-        this.props.fetchDepartments();      
+        this.props.fetchDepartments();     
     }
     departmentClick = ( e ) => {
         // console.log('TEST : ',e.target.id);
@@ -52,7 +52,7 @@ class Navigation extends Component {
                     
                        
                     <div className={ `menu transition ${ Object.values(this.props.categories).length > 0 ? ( this.props.categories.some(item => item.department_id === department_id ) ? (this.state.visible ? 'visible': '') :'') : ''}` }>
-                         { this.renderCategories() }
+                         { this.renderCategories() }  
                     </div>
                     
                     
@@ -94,10 +94,17 @@ class Navigation extends Component {
         );
     }
 };
+const mapDispatchToProps = ( dispatch ) => ({
+    fetchDepartments        :   (  ) => dispatch(fetchDepartments()),
+    fetchCategories         :   (data) => dispatch(fetchCategories(data)),
+    fetchCategoriesData     :   (data) => dispatch(fetchCategoriesData(data)),
+    fetchCategoryProd       :   (data) => dispatch(fetchCategoryProd(data)),
+})
 const mapStateToProps = ( state ) => {
     return {
         categories: state.ecomdata.departmentCategory,
         departments: state.ecomdata.departments,
     }
 }
-export default connect(mapStateToProps, { fetchDepartments, fetchCategories, fetchCategoriesData, fetchCategoryProd })(Navigation);
+// export default connect(mapStateToProps, { fetchDepartments, fetchCategories, fetchCategoriesData, fetchCategoryProd })(Navigation);
+export default connect(mapStateToProps, mapDispatchToProps)(Navigation);

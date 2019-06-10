@@ -5,7 +5,8 @@ import { Menu } from 'semantic-ui-react';
 import Navigation from './ecom/Navigation';
 import { searchQuery } from '../actions' 
 class Header extends Component {
-     state = { cartCount: 0 }
+ 
+    state = { cartCount: 0 }
      queryString = ( e ) => {
          console.log('test : ',e.target.value);
          this.props.searchQuery( e.target.value);
@@ -46,7 +47,9 @@ class Header extends Component {
                         </span>
                     </Link>
                 </Menu.Item>
+                
                 <Navigation /> 
+
                 <Menu.Item className="right menu">
                     <div className={`ui search category ${ this.props.searchResult.rows ? 'active visible': ''}`}>
                         <div className="ui icon input">

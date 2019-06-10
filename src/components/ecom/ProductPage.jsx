@@ -218,6 +218,12 @@ class ProductPage extends Component {
         );
     }
 };
+const mapDispatchToProps = ( dispatch ) => ({
+    fetchCategoryProd: ( data ) => dispatch( fetchCategoryProd( data ) ),
+    fetchProdDetails: ( data ) => dispatch( fetchProdDetails( data ) ),
+    fetchProd: ( data ) => dispatch( fetchProd( data ) ), 
+    fetchProdReviews : ( data ) => dispatch( fetchProdReviews( data ) ),
+})
 const mapStateToProps = ( state ) => {
     return {
         ecomSelCatProd: state.ecomSelCat.selProd,
@@ -226,9 +232,4 @@ const mapStateToProps = ( state ) => {
     }
 }
 export default connect(mapStateToProps, 
-                        {
-                            fetchCategoryProd,
-                            fetchProdDetails,
-                            fetchProd, 
-                            fetchProdReviews 
-                        } )(ProductPage);
+                        mapDispatchToProps )(ProductPage);

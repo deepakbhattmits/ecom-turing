@@ -35,6 +35,12 @@ class CategoryPage extends Component {
         );
     }
 };
+const mapDispatchToProps = ( dispatch ) => ({
+    fetchAttributeSize: () => dispatch(fetchAttributeSize()),
+    fetchAttributeColor: () => dispatch(fetchAttributeColor()),
+    fetchCategoryProd: ( data ) => dispatch(fetchCategoryProd( data ) ),
+    fetchCategoriesData: ( data ) => dispatch(fetchCategoriesData( data ) ),
+})
 const mapStateToProps = ( state, ownProps ) => {
     // console.log("ownprops",ownProps);
     return {
@@ -43,4 +49,4 @@ const mapStateToProps = ( state, ownProps ) => {
     }
 }
 // fetchCategoriesData 
-export default connect(mapStateToProps,{fetchAttributeSize, fetchAttributeColor, fetchCategoryProd, fetchCategoriesData})(CategoryPage);
+export default connect(mapStateToProps,mapDispatchToProps)(CategoryPage);

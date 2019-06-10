@@ -292,6 +292,13 @@ class ProdDetails extends Component {
         );
     }
 };
+const mapDispatchToProps = ( dispatch ) => ({
+    fetchProdDetails: ( data ) => dispatch(fetchProdDetails( data )),
+    fetchProd: ( data ) => dispatch(fetchProd( data )),
+    fetchProdReviews: ( data ) => dispatch(fetchProdReviews( data )),
+    addToCart: ( ) => dispatch(addToCart( )),
+    addShoppingCart: ( data ) => dispatch(addShoppingCart( data )),
+})
 const mapStateToProps = ( state ) => {
     return {
         prodsAttr : state.ecomdata.selProdDetails,
@@ -300,4 +307,4 @@ const mapStateToProps = ( state ) => {
         uniqueCartId: state.ecomdata.uniqueCartId,
     }
 }
-export default connect(mapStateToProps, { fetchProdDetails, fetchProd, fetchProdReviews, addToCart, addShoppingCart } )(ProdDetails);
+export default connect(mapStateToProps, mapDispatchToProps )(ProdDetails);
