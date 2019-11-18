@@ -5,6 +5,10 @@ import { Menu } from 'semantic-ui-react';
 import Navigation from './ecom/Navigation';
 import { searchQuery } from '../actions'
 class Header extends Component {
+    // constructor(props) {
+    //     super(props);
+    // this.ref = createRef();
+    // }
 
     state = { cartCount: 0, value: '' }
     queryString = (e) => {
@@ -44,13 +48,34 @@ class Header extends Component {
         }
     }
 
+
     componentDidMount() {
         window.addEventListener('keydown', this.callback, false);
+        document.addEventListener('mousedown', this.handleClickOutside);
     }
 
     componentWillUnmount() {
         window.removeEventListener('keydown', window.callback, false);
+        document.removeEventListener('mousedown', this.handleClickOutside);
     }
+
+
+    /**
+     * Alert if clicked on outside of element
+     */
+    handleClick = e => {
+
+        if (this.node.contains(e.target)) {
+            //click the inside , continue whatever you want
+            console.log('inside TEST : ', e.target);
+            return;
+        }
+        this.handleClickOutside();
+    }
+    handleClickOutside = (event) => {
+        console.log('outside TEST : ', this.ref);
+    }
+
 
     render() {
         console.log(this.props.selProdData)
