@@ -7,7 +7,7 @@ import { searchQuery } from '../actions';
 // import ListExample from './ListExample';
 const Header = props => {
   const myRef = useRef(null);
-  const [cartCount, setCartCount] = useState(0);
+  const cartCount = useState()[0];
   const [value, setValue] = useState('');
   //   state = { cartCount: 0, value: '' };
   const queryString = e => {
