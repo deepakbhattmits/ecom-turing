@@ -1,6 +1,5 @@
 // import _ from 'lodash';
 import { ecomShop } from '../constants/types';
-
 export default (
   state = {
     shopingCart: {},

@@ -2,7 +2,7 @@ import { ecomShop } from '../constants/types';
 import backendapi from '../apis/backendapi';
 export const fetchDepartments = () => async dispatch => {
   const response = await backendapi.get(`departments`);
-  // console.log('hello DE');
+  // console.log('hello');
   dispatch({ type: ecomShop.FETCH_DEPARTMENTS, payload: response.data });
 };
 export const fetchCategories = id => async dispatch => {

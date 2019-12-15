@@ -9,13 +9,8 @@ const Header = props => {
   const myRef = useRef(null);
   const cartCount = useState()[0];
   const [value, setValue] = useState('');
-  //   state = { cartCount: 0, value: '' };
   const queryString = e => {
-    console.log('test : ', e.target.value);
-
-    // this.setState({ value: e.target.value }, () => {
-    //   props.searchQuery(this.state.value);
-    // });
+    // console.log('test : ', e.target.value);
     setValue(e.target.value);
     props.searchQuery(value);
   };
@@ -74,7 +69,7 @@ const Header = props => {
     props.searchQuery(value);
   };
   const callback = e => {
-    console.log('TEST : ', e.keyCode);
+    // console.log('TEST : ', e.keyCode);
     if (e.keyCode === 27) {
       //   this.setState({ value: '' }, () => {
       //     props.searchQuery(this.state.value);
@@ -119,7 +114,7 @@ const Header = props => {
   //     handleClickOutside();
   //   };
   const handleClickOutside = event => {
-    console.log('outside TEST : ', myRef);
+    // console.log('outside TEST : ', myRef);
   };
   console.log(props.selProdData);
   return (
@@ -133,10 +128,12 @@ const Header = props => {
               style={{
                 backgroundColor: '#f62f5e',
                 color: '#fff',
-                fontWeight: 'bolder'
+                fontWeight: 'bolder',
+                textTransform: 'uppercase',
+                letterSpacing: '.4rem'
               }}
             >
-              S H O P M A T E
+              shopmate
             </span>
           </Link>
         </Menu.Item>

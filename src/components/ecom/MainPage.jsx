@@ -34,8 +34,7 @@ class MainPage extends Component {
       <div>
         <div className='ui inverted vertical masthead center aligned segment'>
           <div className='ui text container'>
-            <h1 className='ui inverted header'></h1>
-            <h2>Happy Birthday. </h2>
+            <h1 className='ui inverted header'>Happy Birthday. </h1>
             <button
               className='ui huge primary button'
               onClick={e => {
