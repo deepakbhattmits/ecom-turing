@@ -99,7 +99,7 @@ const Header = props => {
       window.removeEventListener('keydown', callback, false);
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [callback]);
+  }, []);
 
   /**
    * Alert if clicked on outside of element
