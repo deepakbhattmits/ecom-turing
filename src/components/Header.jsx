@@ -116,7 +116,7 @@ const Header = props => {
   const handleClickOutside = event => {
     // console.log('outside TEST : ', myRef);
   };
-  console.log(props.selProdData);
+  // console.log(props.selProdData);
   return (
     <header className='ui header'>
       {/* <ListExample /> */}
