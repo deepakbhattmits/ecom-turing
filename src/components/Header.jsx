@@ -10,7 +10,7 @@ const Header = props => {
   const cartCount = useState()[0];
   const [value, setValue] = useState('');
   const queryString = e => {
-    // console.log('test : ', e.target.value);
+    // console.log('TEST : ', e.target.value);
     setValue(e.target.value);
     props.searchQuery(value);
   };
@@ -91,15 +91,6 @@ const Header = props => {
   //     window.removeEventListener('keydown', window.callback, false);
   //     document.removeEventListener('mousedown', this.handleClickOutside);
   //     }
-  useEffect(() => {
-    window.addEventListener('keydown', callback, false);
-    document.addEventListener('mousedown', handleClickOutside);
-    moveFocus();
-    return () => {
-      window.removeEventListener('keydown', callback, false);
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
 
   /**
    * Alert if clicked on outside of element
@@ -117,6 +108,15 @@ const Header = props => {
     // console.log('outside TEST : ', myRef);
   };
   // console.log(props.selProdData);
+  useEffect(() => {
+    document.addEventListener('keydown', callback, false);
+    document.addEventListener('mousedown', handleClickOutside, false);
+    moveFocus();
+    return () => {
+      document.removeEventListener('keydown', callback, false);
+      document.removeEventListener('mousedown', handleClickOutside, false);
+    };
+  }, []);
   return (
     <header className='ui header'>
       {/* <ListExample /> */}
