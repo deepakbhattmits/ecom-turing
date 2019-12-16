@@ -36,7 +36,7 @@ class Navigation extends Component {
         <div
           role='listbox'
           aria-expanded='false'
-          className='ui pointing dropdown link item'
+          className='ui pointing dropdown link item '
           key={department_id}
           id={department_id}
           onClick={this.departmentClick}
