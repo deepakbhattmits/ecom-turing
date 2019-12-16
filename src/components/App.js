@@ -10,7 +10,7 @@ import ProdDetails from './ecom/ProdDetails';
 import ReviewPage from './ecom/ReviewPage';
 const App = () => {
   return (
-    <div className='ui grid center aligned'>
+    <div className='ui grid center aligned '>
       <div className='ui fifteen wide column'>
         <Router history={createBrowserHistory}>
           <Header />
