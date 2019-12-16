@@ -41,7 +41,7 @@ class ProdDetails extends Component {
     this.props.addToCart();
   }
   componentWillReceiveProps() {
-    console.log('component will receive props : ', this.props);
+    // console.log('component will receive props : ', this.props);
   }
   renderProReview = () => {
     return this.props && this.props.prodReview.length > 0 ? (
