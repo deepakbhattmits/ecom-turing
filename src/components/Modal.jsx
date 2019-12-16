@@ -5,7 +5,7 @@ const Modal = props => {
   return createPortal(
     <div
       onClick={props.onDismiss}
-      className={`ui dimmer page  ${
+      className={`ui dimmer page ${
         props.status ? 'visible active' : 'hidden'
       }`}
     >
