@@ -11,7 +11,7 @@ class ReviewPage extends Component {
               <i className='icon yellow' key={i} />
             ))}
           </div>
-          <div className='content'>
+          <div className='content '>
             <span className='header'> {this.props.name}</span>
             <div className='description'>Updated 10 mins ago</div>
           </div>
