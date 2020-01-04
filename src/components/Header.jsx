@@ -1,7 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Menu } from 'semantic-ui-react';
 import Navigation from './ecom/Navigation';
 import { searchQuery } from '../actions';
 // import ListExample from './ListExample';
@@ -61,26 +60,13 @@ const Header = props => {
       );
     });
   };
-  const clearInput = () => {
+  const clearInput = useCallback(() => {
     // this.setState({ value: '' }, () => {
     //   props.searchQuery(this.state.value);
     // });
     setValue('');
     props.searchQuery(value);
-  };
-  const callback = e => {
-    // console.log('TEST : ', e.keyCode);
-    if (e.keyCode === 27) {
-      //   this.setState({ value: '' }, () => {
-      //     props.searchQuery(this.state.value);
-      //   });
-      clearInput();
-    }
-    if (e.keyCode === 30) {
-      props.searchQuery(value);
-    }
-  };
-
+  },[props, value]);
   //   componentDidMount() {
   //     window.addEventListener('keydown', this.callback, false);
   //     document.addEventListener('mousedown', this.handleClickOutside);
@@ -109,6 +95,14 @@ const Header = props => {
   };
   // console.log(props.selProdData);
   useEffect(() => {
+    const callback = e => {
+      if (e.keyCode === 27) {
+        clearInput();
+      }
+      if (e.keyCode === 30) {
+        props.searchQuery(value);
+      }
+    };
     document.addEventListener('keydown', callback, false);
     document.addEventListener('mousedown', handleClickOutside, false);
     moveFocus();
@@ -116,12 +110,12 @@ const Header = props => {
       document.removeEventListener('keydown', callback, false);
       document.removeEventListener('mousedown', handleClickOutside, false);
     };
-  }, []);
+  }, [clearInput, props, value]);
   return (
     <header className='ui header'>
       {/* <ListExample /> */}
-      <Menu>
-        <Menu.Item className='left menu'>
+      <div className="ui pointing menu">
+        <div className='left menu'>
           <Link to={`/`}>
             <span
               className='ui item'
@@ -136,11 +130,11 @@ const Header = props => {
               shopmate
             </span>
           </Link>
-        </Menu.Item>
+        </div>
 
         <Navigation />
 
-        <Menu.Item className='right menu'>
+        <div className='right menu'>
           <div
             className={`ui search category ${
               props.searchResult.rows ? 'active visible' : ''
@@ -180,8 +174,8 @@ const Header = props => {
               </p>
             </Link>
           </div>
-        </Menu.Item>
-      </Menu>
+        </div>
+      </div>
     </header>
   );
 };
