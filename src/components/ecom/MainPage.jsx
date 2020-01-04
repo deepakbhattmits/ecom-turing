@@ -8,10 +8,10 @@ class MainPage extends Component {
     this.state = { homecomponent: true };
   }
   componentWillMount() {
-    console.log('componentWillMount');
+    // console.log('componentWillMount');
   }
   componentDidMount() {
-    console.log('componentDidMount');
+    // console.log('componentDidMount');
   }
   componentWillReceiveProps(nextProps) {
     console.log('componentWiilReceiveProps', nextProps);
