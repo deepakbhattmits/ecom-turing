@@ -3,7 +3,8 @@ import RainBow from '../hoc/RainBow';
 import PropTypes from 'prop-types';
 
 const CartPage =()=> {
-  const [inputVal, setInputVal]=useState('');
+  const [inputVal, setInputVal] = useState('');
+  // console.log('test')
     return (
       <div className='cart-page'>
         cart count
