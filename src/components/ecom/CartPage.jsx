@@ -1,30 +1,23 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import RainBow from '../hoc/RainBow';
 import PropTypes from 'prop-types';
 
-class CartPage extends Component {
-  state = {
-    inputVal: ''
-  };
-
-  render() {
-    //  const divstyle = { backgroundColor: 'cyan', color: '#000' }
-    console.log(typeof this.state.inputVal);
+const CartPage =()=> {
+  const [inputVal, setInputVal]=useState('');
     return (
       <div className='cart-page'>
         cart count
         <input
           type='text'
           onChange={e =>
-            this.setState({ inputVal: e.target.value.toUpperCase() })
-          }
-          value={this.state.inputVal}
+            setInputVal(e.target.value)
+                     }
+          value={inputVal}
         />
-        {`Input Text is :${this.state.inputVal}`}
+        {`Input Text is :${inputVal}`}
       </div>
     );
   }
-}
 CartPage.propTypes = {
   inputVal: PropTypes.string
 };
