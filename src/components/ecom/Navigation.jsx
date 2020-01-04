@@ -18,7 +18,7 @@ class Navigation extends Component {
     this.props.fetchDepartments();
   }
   departmentClick = e => {
-    // console.log('TEST : ',e.target.id);
+    // console.log('TEST :',e.target.id);
     this.props.fetchCategories(e.target.id);
     this.setState({ visible: true, active: true });
   };
