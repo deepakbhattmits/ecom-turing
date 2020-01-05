@@ -21,6 +21,7 @@ export default (
   const sizeArr = [];
   switch (action.type) {
     case ecomShop.FETCH_DEPARTMENTS:
+      // console.log(action.type)
       return Object.assign({}, state, { departments: action.payload });
     case ecomShop.SEARCH_QUERY:
       return Object.assign({}, state, { searchResult: action.payload });
