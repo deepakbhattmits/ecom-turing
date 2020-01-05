@@ -1,6 +1,6 @@
 import React from 'react';
 const Footer = () => {
-  // console.log('TEST')
+  // console.log('TEST:')
   return (<footer className='ui footer '>
   i am footer</footer>);
 };
