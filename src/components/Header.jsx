@@ -9,12 +9,11 @@ const Header = props => {
   const cartCount = useState()[0];
   const [value, setValue] = useState('');
   const queryString = e => {
-    // console.log('TEST : ', e.target.value);
     setValue(e.target.value);
     props.searchQuery(value);
   };
   const select = () => {
-    // props.selectedProd
+    setValue('');
   };
   const moveFocus = () => {
     const node = myRef.current;
@@ -60,12 +59,10 @@ const Header = props => {
       );
     });
   };
-  const clearInput = useCallback(() => {
-    // this.setState({ value: '' }, () => {
-    //   props.searchQuery(this.state.value);
-    // });
-    setValue('');
+  const clearInput = useCallback(() => { 
+    console.log('clearInput : ',value)
     props.searchQuery(value);
+    setValue('');
   },[props, value]);
   //   componentDidMount() {
   //     window.addEventListener('keydown', this.callback, false);
@@ -94,20 +91,30 @@ const Header = props => {
     // console.log('outside TEST : ', myRef);
   };
   // console.log(props.selProdData);
+  // const callback = useCallback(e => {
+  //   console.log('value : ',value)
+  //   if (e.keyCode === 27) {
+  //     clearInput();
+  //   }
+  //   if (e.keyCode === 30) {
+  //     props.searchQuery(value);
+  //   }
+  // },[clearInput, props, value]);
   useEffect(() => {
     const callback = e => {
+      // console.log(e.keyCode)
       if (e.keyCode === 27) {
         clearInput();
       }
-      if (e.keyCode === 30) {
+      if (e.keyCode === 13) {
         props.searchQuery(value);
       }
     };
-    document.addEventListener('keydown', callback, false);
+    document.addEventListener('keydown', callback, true);
     document.addEventListener('mousedown', handleClickOutside, false);
     moveFocus();
     return () => {
-      document.removeEventListener('keydown', callback, false);
+      document.removeEventListener('keydown', callback, true);
       document.removeEventListener('mousedown', handleClickOutside, false);
     };
   }, [clearInput, props, value]);
@@ -157,7 +164,7 @@ const Header = props => {
 
             <div
               className={`results transition ${
-                props.searchResult.rows && props.searchResult.rows.length > 0
+                value && props.searchResult.rows && props.searchResult.rows.length > 0
                   ? 'visible'
                   : 'hidden'
               }`}
