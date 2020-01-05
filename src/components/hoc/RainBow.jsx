@@ -8,7 +8,7 @@ const RainBow = WrappedComponent => {
   return props => {
     return (
       <div
-        className={className}
+        className={`ui section ${ className }`}
         style={{ backgroundColor: `${randomColour}`, color: `${textColour}` }}
       >
         <WrappedComponent {...props} />
