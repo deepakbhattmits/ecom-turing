@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 import Navigation from './ecom/Navigation';
 import { searchQuery } from '../actions';
 // import ListExample from './ListExample';
-const Header = props => {
+const Header = props =>
+{
+  // console.log('TEST :',props)
   const myRef = useRef(null);
   const cartCount = useState()[0];
   const [value, setValue] = useState('');
