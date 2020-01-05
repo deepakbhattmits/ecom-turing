@@ -6,7 +6,7 @@ import {
   fetchAttributeSize,
   fetchAttributeColor
 } from '../../actions';
-import ProductPage from './ProductPage';
+import ProductList from './ProductList';
 
 class CategoryPage extends Component {
   componentDidMount() {
@@ -25,7 +25,7 @@ class CategoryPage extends Component {
         <h2 className='ui center aligned header'>{catName}</h2>
         <p>{catDescription} </p>
 
-        <ProductPage catId={catId} />
+        <ProductList catId={catId} />
       </div>
     );
   }
