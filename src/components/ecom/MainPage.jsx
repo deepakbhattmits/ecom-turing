@@ -7,28 +7,23 @@ class MainPage extends Component {
     console.log('constructor');
     this.state = { homecomponent: true };
   }
-  componentWillMount() {
-    // console.log('componentWillMount');
-  }
-  componentDidMount() {
-    // console.log('componentDidMount');
-  }
-  componentWillReceiveProps(nextProps) {
-    console.log('componentWiilReceiveProps', nextProps);
-  }
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log('shouldComponentUpdate', nextProps, nextState);
-    return true;
-  }
-  componentWillUpdate(nextProps, nextState) {
-    console.log('componentWillUpdate', nextProps, nextState);
-  }
-  componentDidUpdate(nextProps, nextState) {
-    console.log('componentDidUpdate', nextProps, nextState);
-  }
-  componentWillUnmount() {
-    console.log('componentWillUnmount');
-  }
+
+  // getDerivedStateFromProps(nextProps) {
+  //   console.log('componentWiilReceiveProps', nextProps);
+  // }
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log('shouldComponentUpdate', nextProps, nextState);
+  //   return true;
+  // }
+  // componentWillUpdate(nextProps, nextState) {
+  //   console.log('componentWillUpdate', nextProps, nextState);
+  // }
+  // componentDidUpdate(nextProps, nextState) {
+  //   console.log('componentDidUpdate', nextProps, nextState);
+  // }
+  // componentWillUnmount() {
+  //   console.log('componentWillUnmount');
+  // }
   render() {
     return (
       <div>
