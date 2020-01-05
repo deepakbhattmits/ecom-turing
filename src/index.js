@@ -23,7 +23,7 @@ const store = createStore(
   persistedReducer,
   composeEnhancers(applyMiddleware(reduxThunk))
 ); // new added line
-const persistor = persistStore(store); // new added line
+const persistor = persistStore(store); // added line
 
 // const store = createStore(
 //     reducers,
