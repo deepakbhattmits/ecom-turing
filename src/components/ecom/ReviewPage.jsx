@@ -3,6 +3,7 @@ import _ from 'lodash';
 
 class ReviewPage extends Component {
   render() {
+    // console.log(this.props)
     return (
       <div className='ui relaxed divided list'>
         <div className='item'>
