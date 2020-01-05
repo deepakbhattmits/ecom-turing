@@ -189,7 +189,7 @@ class ProductList extends Component {
   };
 
   render() {
-    console.log('LIST PAGE : ', this.props.ecomSelCatProd)
+    console.log('LIST PAGE: ', this.props.ecomSelCatProd)
     return (
       <div className='ui grid left aligned'>
         <div className='four wide column'>
