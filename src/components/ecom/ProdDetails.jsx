@@ -32,17 +32,17 @@ class ProdDetails extends Component {
   };
   componentDidMount() {
     const prod_id =
-      this.props && this.props.match.params.id
-        ? this.props.match.params.id
-        : '';
+    this.props && this.props.match.params.id
+    ? this.props.match.params.id
+    : '';
     this.props.fetchProd(prod_id);
     this.props.fetchProdDetails(prod_id);
     this.props.fetchProdReviews(prod_id);
     this.props.addToCart();
   }
-  componentWillReceiveProps() {
-    // console.log('component will receive props: ', this.props);
-  }
+  // componentWillReceiveProps() {
+  //   // console.log('component will receive props: ', this.props);
+  // }
   renderProReview = () => {
     return this.props && this.props.prodReview.length > 0 ? (
       this.props.prodReview.map((review, i) => {
