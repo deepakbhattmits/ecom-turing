@@ -9,7 +9,7 @@ import CartPage from './ecom/CartPage';
 import ProdDetails from './ecom/ProdDetails';
 import ReviewPage from './ecom/ReviewPage';
 const App = () => {
-  // console.log('TEST :');
+  // console.log('TEST : ');
   return (
     <div className='ui grid center aligned'>
       <div className='ui fifteen wide column'>
