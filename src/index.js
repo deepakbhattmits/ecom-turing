@@ -22,7 +22,7 @@ const persistedReducer = persistReducer(persistConfig, reducers); // new added l
 const store = createStore(
   persistedReducer,
   composeEnhancers(applyMiddleware(reduxThunk))
-); // new added line
+); // added line
 const persistor = persistStore(store); // added line
 
 // const store = createStore(
