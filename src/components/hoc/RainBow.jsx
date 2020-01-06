@@ -1,20 +1,21 @@
+/** @format */
+
 import React from 'react';
 
 const RainBow = WrappedComponent => {
-  const colours = ['red', 'blue', 'green', 'pink', 'cyan'];
-  const randomColour = colours[Math.floor(Math.random() * 4)];
-  const textColour = '#fff';
-  const className = randomColour + '--text';
-// console.log('TEST : ', WrappedComponent)
-  return props => {
-    return (
-      <div
-        className={`ui section ${ className }`}
-        style={{ backgroundColor: `${randomColour}`, color: `${textColour}` }}
-      >
-        <WrappedComponent {...props} />
-      </div>
-    );
-  };
+	const colours = ['red', 'blue', 'green', 'pink', 'cyan'];
+	const randomColour = colours[Math.floor(Math.random() * 4)];
+	const textColour = '#fff';
+	const className = randomColour + '--text';
+	// console.log('TEST :> ', WrappedComponent)
+	return props => {
+		return (
+			<div
+				className={`ui section ${className}`}
+				style={{ backgroundColor: `${randomColour}`, color: `${textColour}` }}>
+				<WrappedComponent {...props} />
+			</div>
+		);
+	};
 };
 export default RainBow;
