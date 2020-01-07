@@ -5,7 +5,7 @@ import _ from 'lodash';
 
 class ReviewPage extends Component {
 	render() {
-		// console.log('TEST :',this.props)
+		// console.log('TEST : ',this.props)
 		return (
 			<div className='ui relaxed divided list'>
 				<div className='item'>
