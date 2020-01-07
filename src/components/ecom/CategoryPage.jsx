@@ -39,7 +39,7 @@ const mapDispatchToProps = dispatch => ({
 	fetchCategoriesData: data => dispatch(fetchCategoriesData(data))
 });
 const mapStateToProps = (state, ownProps) => {
-	// console.log("ownprops :",ownProps);
+	// console.log("ownprops : ",ownProps);
 	return {
 		ecomdata: state.ecomdata[ownProps.match.params.id],
 		ecomSelCat: state.ecomSelCat
