@@ -7,7 +7,7 @@ const RainBow = WrappedComponent => {
 	const randomColour = colours[Math.floor(Math.random() * 4)];
 	const textColour = '#fff';
 	const className = randomColour + '--text';
-	// console.log('TEST :> ', WrappedComponent)
+	// console.log('TEST : ', WrappedComponent)
 	return props => {
 		return (
 			<div
