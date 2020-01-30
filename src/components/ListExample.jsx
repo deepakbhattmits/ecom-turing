@@ -12,7 +12,7 @@ class ListExample extends Component {
 	}
 	moveFocus() {
 		const node = this.Ref.current;
-		// console.log('TEST :',node)
+		console.log('TEST :', node);
 		node.addEventListener('keydown', function(e) {
 			const active = document.activeElement;
 			if (e.keyCode === 40 && active.nextSibling) {
