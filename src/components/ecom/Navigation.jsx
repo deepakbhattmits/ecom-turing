@@ -18,7 +18,7 @@ const Navigation = props => {
 		props.fetchDepartments();
 	}, [props]);
 	const departmentClick = e => {
-		// console.log('TEST : ',e.target.id);
+		console.log('TEST : ', e.target.id);
 		props.fetchCategories(e.target.id);
 		setVisible(!visible);
 		setActive(!active);
