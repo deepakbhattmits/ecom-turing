@@ -24,8 +24,8 @@ class MainPage extends Component {
 	//   console.log('componentDidUpdate', nextProps, nextState);
 	// }
 	// componentWillUnmount() {
-	  console.log('componentWillUnmount : ');
-	// }
+	//   console.log('componentWillUnmount : ');
+	// // }
 	render() {
 		return (
 			<div>
