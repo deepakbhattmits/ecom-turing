@@ -1,8 +1,11 @@
 /** @format */
 
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const MainPage = props => {
+	const departments = useSelector(state => state.ecomdata.departments);
+	// console.log('MainPage : ', departments);
 	// constructor(props) {
 	// 	super(props);
 	// 	// console.logx('constructor');
@@ -63,7 +66,7 @@ const MainPage = props => {
 				<div className='ui equal width stackable internally celled grid'>
 					<div className='center aligned row'>
 						<div className='column'>
-							<h3> New Arivals</h3>
+							<h3> New Arivals - {departments[0].name}</h3>
 						</div>
 						<div className='column'>
 							<h3>Clothes</h3>
