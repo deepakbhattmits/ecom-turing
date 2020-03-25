@@ -12,6 +12,7 @@ import {
 } from '../../actions';
 
 const Navigation = props => {
+	console.log('TEST');
 	const departments = useSelector(state => state.ecomdata.departments);
 	const dispatch = useDispatch();
 	const [visible, setVisible] = useState(false);
