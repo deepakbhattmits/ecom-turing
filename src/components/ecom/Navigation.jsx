@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
+import { connect, useSelector, useDispatch } from 'react-redux';
 import history from '../../history';
 
 import {
@@ -12,13 +12,16 @@ import {
 } from '../../actions';
 
 const Navigation = props => {
+	const departments = useSelector(state => state.ecomdata.departments);
+	const dispatch = useDispatch();
 	const [visible, setVisible] = useState(false);
 	const [active, setActive] = useState(false);
 	useEffect(() => {
-		props.fetchDepartments();
+		if (!departments.length) {
+			props.fetchDepartments();
+		}
 	}, [props]);
 	const departmentClick = e => {
-		console.log('TEST : ', e.target.id);
 		props.fetchCategories(e.target.id);
 		setVisible(!visible);
 		setActive(!active);
@@ -31,10 +34,10 @@ const Navigation = props => {
 		props.fetchCategoryProd(id);
 	};
 	const renderDepartments = () => {
-		if (Object.values(props.departments).length === 0) {
+		if (Object.values(departments).length === 0) {
 			return <div>Loading...</div>;
 		}
-		return props.departments.map(({ name, department_id }) => {
+		return departments.map(({ name, department_id }) => {
 			return (
 				<div
 					role='listbox'
