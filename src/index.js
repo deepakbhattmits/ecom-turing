@@ -1,3 +1,5 @@
+/** @format */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -13,15 +15,15 @@ import './assets/styles/styles.scss';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const persistConfig = {
-  key: 'root',
-  storage
+	key: 'root',
+	storage
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers); // new added line
 
 const store = createStore(
-  persistedReducer,
-  composeEnhancers(applyMiddleware(reduxThunk))
+	persistedReducer,
+	composeEnhancers(applyMiddleware(reduxThunk))
 ); // added line
 const persistor = persistStore(store); // added line
 
@@ -29,11 +31,12 @@ const persistor = persistStore(store); // added line
 //     reducers,
 //     composeEnhancers( applyMiddleware( reduxThunk ) ),
 //     );
+const rootElement = document.querySelector('#root');
 ReactDOM.render(
-  <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      <App />
-    </PersistGate>
-  </Provider>,
-  document.querySelector('#root')
+	<Provider store={store}>
+		<PersistGate loading={null} persistor={persistor}>
+			<App />
+		</PersistGate>
+	</Provider>,
+	rootElement
 );
