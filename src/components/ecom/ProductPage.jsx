@@ -25,7 +25,7 @@ class ProductPage extends Component {
 	};
 	renderProd = () => {
 		if (!this.props.ecomSelCatProd.rows) {
-			return <div>Loading...</div>;
+			return <div>Loading....</div>;
 		}
 		return this.props.ecomSelCatProd.rows.map(
 			({
