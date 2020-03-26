@@ -1,11 +1,10 @@
 /** @format */
 
-import React, { useState } from 'react';
+import React from 'react';
 import RainBow from '../hoc/RainBow';
 import PropTypes from 'prop-types';
 
 const CartPage = () => {
-	const [inputVal, setInputVal] = useState('');
 	return (
 		<div className='cart-page'>
 			<h1>cart</h1>
