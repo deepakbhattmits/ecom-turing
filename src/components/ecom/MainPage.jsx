@@ -8,7 +8,7 @@ const MainPage = props => {
 	const departments = useSelector(state => state.ecomdata.departments);
 	const dispatch = useDispatch();
 	useEffect(() => {
-		console.log('mainpage', departments);
+		// console.log('mainpage', departments);
 		if (!departments) {
 			dispatch(fetchDepartments());
 		}
@@ -27,28 +27,7 @@ const MainPage = props => {
 	//   console.log('shouldComponentUpdate', nextProps, nextState);
 	//   return true;
 	// }
-	// componentWillUpdate(nextProps, nextState) {
-	//   console.log('componentWillUpdate', nextProps, nextState);
-	// }
-	// componentDidUpdate(nextProps, nextState) {
-	//   console.log('componentDidUpdate', nextProps, nextState);
-	// }
-	// componentWillUnmount() {
-	//   console.log('componentWillUnmount : ');
-	// // }
-	return (
-		<div>
-			<div className='ui inverted vertical masthead center aligned segment'>
-				<img
-					className='ui fluid image'
-					src={require('../../assets/images/banner-01.jpg')}
-					alt='hello'
-				/>
-				{/* <button
-						className='ui huge primary button'
-						onClick={e => {
-							this.setState({ homecomponent: !this.state.homecomponent });
-						}}>
+git add 
 						GO..<i className='right arrow icon'></i>
 					</button> */}
 			</div>
