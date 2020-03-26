@@ -1,6 +1,11 @@
 /** @format */
 
 .ui {
+	.pointing {
+		.menu {
+			align-items: center;
+		}
+	}
 	.header {
 		height: 50px;
 	}
@@ -51,6 +56,30 @@
 						margin-left: 0.5rem;
 					}
 				}
+			}
+		}
+	}
+	.bag {
+		background: #000;
+		height: 35px;
+		border-radius: 50%;
+		width: 35px;
+		margin: 5px 5px 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		.count {
+			position: absolute;
+			font-size: 0.8rem;
+			top: 2px;
+			right: 9px;
+		}
+		.icon-span {
+			.icon {
+				font-size: 1.4rem;
+				margin: 0;
+				color: #fff;
 			}
 		}
 	}

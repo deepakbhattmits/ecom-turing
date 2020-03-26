@@ -11,6 +11,7 @@ import {
 	fetchProdReviews
 } from '../../actions';
 const ProductList = props => {
+	console.log('TEST ProductList');
 	const { rows } = props.ecomSelCatProd;
 	const [products, setProducts] = useState([]);
 	const [statusColor, setStatusColor] = useState('');

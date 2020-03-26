@@ -6,16 +6,9 @@ import PropTypes from 'prop-types';
 
 const CartPage = () => {
 	const [inputVal, setInputVal] = useState('');
-	// console.log('test : ')
 	return (
 		<div className='cart-page'>
-			cart count
-			<input
-				type='text'
-				onChange={e => setInputVal(e.target.value)}
-				value={inputVal}
-			/>
-			{`Input Text is :${inputVal}`}
+			<h1>cart</h1>
 		</div>
 	);
 };

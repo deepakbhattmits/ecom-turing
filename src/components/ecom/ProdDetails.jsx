@@ -144,7 +144,7 @@ class ProdDetails extends Component {
 		// this.setState({ cartData: [ ...this.state.cartData,this.state.quantity ] });
 	};
 	validate() {
-		console.log('want to add in cart :', this.state.cartData);
+		// console.log('want to add in cart :', this.state.cartData);
 		this.props.addShoppingCart(this.state.cartData);
 		// rtData).length > 1) {
 

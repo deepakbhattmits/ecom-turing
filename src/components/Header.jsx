@@ -7,7 +7,7 @@ import Navigation from './ecom/Navigation';
 import { searchQuery } from '../actions';
 // import ListExample from './ListExample';
 const Header = props => {
-	// console.log('TEST :> ', props);
+	console.log('TEST :> ', props);
 	const myRef = useRef(null);
 	const cartCount = useState()[0];
 	const [value, setValue] = useState('');
@@ -155,12 +155,14 @@ const Header = props => {
 								onChange={queryString}
 								value={value}
 							/>
+							{value.length === 0 ? (
+								<i className='search icon'></i>
+							) : (
+								<i
+									className='icon window close outline'
+									onClick={clearInput}></i>
+							)}
 						</div>
-						{value.length === 0 ? (
-							<i className='search icon'></i>
-						) : (
-							<i className='icon window close outline' onClick={clearInput}></i>
-						)}
 
 						<div
 							className={`results transition ${
@@ -176,10 +178,10 @@ const Header = props => {
 					</div>
 					<div className='bag'>
 						<Link to={`/ecom/cartPage`}>
-							<p>{cartCount}</p>
-							<p>
+							<span className='count'>{10}</span>
+							<span className='icon-span'>
 								<i className='icon shop'></i>
-							</p>
+							</span>
 						</Link>
 					</div>
 				</div>

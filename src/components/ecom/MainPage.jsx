@@ -1,11 +1,19 @@
 /** @format */
 
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchDepartments } from '../../actions';
 
 const MainPage = props => {
 	const departments = useSelector(state => state.ecomdata.departments);
-	// console.log('MainPage : ', departments);
+	const dispatch = useDispatch();
+	useEffect(() => {
+		console.log('mainpage', departments);
+		if (!departments) {
+			dispatch(fetchDepartments());
+		}
+	}, []);
+	console.log('MainPage : ', departments);
 	// constructor(props) {
 	// 	super(props);
 	// 	// console.logx('constructor');
@@ -33,7 +41,7 @@ const MainPage = props => {
 			<div className='ui inverted vertical masthead center aligned segment'>
 				<img
 					className='ui fluid image'
-					src='https://via.placeholder.com/1500x400.png?text=Demo'
+					src={require('../../assets/images/banner-01.jpg')}
 					alt='hello'
 				/>
 				{/* <button
@@ -66,7 +74,9 @@ const MainPage = props => {
 				<div className='ui equal width stackable internally celled grid'>
 					<div className='center aligned row'>
 						<div className='column'>
-							<h3> New Arivals - {departments[0].name}</h3>
+							<h3>
+								New Arivals - {departments.length ? departments[0].name : ''}
+							</h3>
 						</div>
 						<div className='column'>
 							<h3>Clothes</h3>

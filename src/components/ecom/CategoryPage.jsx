@@ -18,7 +18,7 @@ class CategoryPage extends Component {
 		this.props.fetchAttributeColor();
 	}
 	render() {
-		// console.log("test:",this.props);
+		console.log('test:', this.props);
 		const catId = this.props.ecomSelCat.selCat.category_id;
 		const catName = this.props.ecomSelCat.selCat.name;
 		const catDescription = this.props.ecomSelCat.selCat.description;
