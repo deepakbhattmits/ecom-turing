@@ -66,7 +66,7 @@ class ProductPage extends Component {
 	};
 	renderColor = () => {
 		if (!this.props.colorAttr.length) {
-			return <div>Loading...</div>;
+			return <div>Loading....</div>;
 		}
 		return this.props.colorAttr.map(attr => {
 			return (
