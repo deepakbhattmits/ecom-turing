@@ -60,7 +60,7 @@ class ProdDetails extends Component {
 	};
 	renderProductColor() {
 		if (!this.props.prodsAttr.color.length) {
-			return <div>Loading....</div>;
+			return <div>Loading...</div>;
 		}
 		return this.props.prodsAttr.color.map(attr => {
 			return (
