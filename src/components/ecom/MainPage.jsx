@@ -8,7 +8,7 @@ const MainPage = props => {
 	const departments = useSelector(state => state.ecomdata.departments);
 	const dispatch = useDispatch();
 	useEffect(() => {
-		// console.log('mainpage', departments);
+		console.log('mainpage', departments);
 		if (!departments) {
 			dispatch(fetchDepartments());
 		}
