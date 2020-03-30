@@ -85,7 +85,7 @@ const ProductList = props => {
 			setProducts(filteredproducts);
 		} else {
 			filteredproducts = products;
-			console.log('PRICE SORT ORDER : ', id, textContent);
+			// console.log('PRICE SORT ORDER : ', id, textContent);
 			setSelectedPrice(textContent);
 			setProducts(filteredproducts);
 		}
