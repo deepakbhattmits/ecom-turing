@@ -27,11 +27,8 @@ const MainPage = props => {
 	//   console.log('shouldComponentUpdate', nextProps, nextState);
 	//   return true;
 	// }
-git add 
-						GO..<i className='right arrow icon'></i>
-					</button> */}
-			</div>
-
+	return (
+		<>
 			<div className='ui vertical stripe segment'>
 				<div className='ui middle aligned stackable grid container'>
 					<div className='row'>
@@ -93,7 +90,7 @@ git add
 					<a className='ui large button'>I'm Still Quite Interested</a>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 export default MainPage;
