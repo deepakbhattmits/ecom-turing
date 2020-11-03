@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import history from '../../history';
 
