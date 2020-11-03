@@ -1,6 +1,6 @@
 /** @format */
 
-import React from 'react';
+// import React from 'react';
 
 const RainBow = WrappedComponent => {
 	const colours = ['red', 'blue', 'green', 'pink', 'cyan'];
