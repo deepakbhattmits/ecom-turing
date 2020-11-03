@@ -1,6 +1,7 @@
 /** @format */
 
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
+import { Component } from 'react';
 
 class HomePage extends Component {
 	render() {
