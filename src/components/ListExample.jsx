@@ -1,11 +1,12 @@
 /** @format */
 
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
+import { Component, createRef } from 'react';
 
 class ListExample extends Component {
 	constructor(props) {
 		super(props);
-		this.Ref = React.createRef();
+		this.Ref = createRef();
 	}
 	componentDidMount() {
 		this.moveFocus();
