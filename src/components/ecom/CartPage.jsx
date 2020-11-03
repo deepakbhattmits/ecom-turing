@@ -1,6 +1,6 @@
 /** @format */
 
-import React from 'react';
+// import React from 'react';
 import RainBow from '../hoc/RainBow';
 import PropTypes from 'prop-types';
 
