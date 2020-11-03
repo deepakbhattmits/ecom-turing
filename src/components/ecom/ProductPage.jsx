@@ -1,6 +1,7 @@
 /** @format */
 
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
+import { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { Link } from 'react-router-dom';
