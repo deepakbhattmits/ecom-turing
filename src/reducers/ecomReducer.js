@@ -2,7 +2,7 @@
 
 // import _ from 'lodash';
 import { ecomShop } from '../constants/types';
-export default (
+const ecomReducer= (
 	state = {
 		shopingCart: {},
 		uniqueCartId: {},
@@ -61,3 +61,4 @@ export default (
 			return state;
 	}
 };
+export default ecomReducer;
