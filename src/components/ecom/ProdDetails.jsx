@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { Component, Fragment } from 'react';
+import { Component, Fragment } from 'react';
 import Modal from '../Modal';
 import { connect } from 'react-redux';
 import AliceCarousel from 'react-alice-carousel';
