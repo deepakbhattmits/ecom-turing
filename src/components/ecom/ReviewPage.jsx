@@ -1,6 +1,7 @@
 /** @format */
 
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
+import { Component } from 'react';
 import _ from 'lodash';
 
 class ReviewPage extends Component {
