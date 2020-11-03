@@ -1,3 +1,4 @@
+// ecomShop;
 export const ecomShop = {
   FETCH_DEPARTMENTS: 'FETCH_DEPARTMENTS',
   LIST_CATEGORIES: 'LIST_CATEGORIES',
