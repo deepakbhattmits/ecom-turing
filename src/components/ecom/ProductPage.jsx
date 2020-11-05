@@ -1,6 +1,4 @@
 /** @format */
-
-// import React, { Component } from 'react';
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
@@ -9,16 +7,16 @@ import {
 	fetchCategoryProd,
 	fetchProdDetails,
 	fetchProd,
-	fetchProdReviews
+	fetchProdReviews,
 } from '../../actions';
 class ProductPage extends Component {
 	state = {
 		statusColor: '',
 		statusSize: '',
 		selectedColor: [],
-		selectedSize: []
+		selectedSize: [],
 	};
-	prodDetails = e => {
+	prodDetails = (e) => {
 		this.props.fetchCategoryProd(e.target.id);
 		this.props.fetchProd(e.target.id);
 		this.props.fetchProdDetails(e.target.id);
@@ -35,7 +33,7 @@ class ProductPage extends Component {
 				description,
 				discounted_price,
 				price,
-				thumbnail
+				thumbnail,
 			}) => {
 				return (
 					<Link
@@ -69,14 +67,14 @@ class ProductPage extends Component {
 		if (!this.props.colorAttr.length) {
 			return <div>Loading...</div>;
 		}
-		return this.props.colorAttr.map(attr => {
+		return this.props.colorAttr.map((attr) => {
 			return (
 				<button
 					key={attr.attribute_value_id}
-					onClick={e => {
+					onClick={(e) => {
 						this.setState({
 							selectedColor: _.uniq([...this.state.selectedColor, e.target.id]),
-							statusColor: _.uniq([...this.state.statusColor, e.target.id])
+							statusColor: _.uniq([...this.state.statusColor, e.target.id]),
 						});
 					}}
 					id={attr.value}
@@ -90,14 +88,14 @@ class ProductPage extends Component {
 		if (!this.props.sizeAttr.length) {
 			return <div>Loading...</div>;
 		}
-		return this.props.sizeAttr.map(attr => {
+		return this.props.sizeAttr.map((attr) => {
 			return (
 				<button
 					id={attr.value}
-					onClick={e => {
+					onClick={(e) => {
 						this.setState({
 							selectedSize: _.uniq([...this.state.selectedSize, e.target.id]),
-							statusSize: _.uniq([...this.state.statusSize, e.target.id])
+							statusSize: _.uniq([...this.state.statusSize, e.target.id]),
 						});
 					}}
 					className={`mini ui button ${
@@ -122,14 +120,14 @@ class ProductPage extends Component {
 					<i
 						id={color}
 						className='icon close'
-						onClick={e => {
+						onClick={(e) => {
 							this.setState({
 								selectedColor: this.state.selectedColor.filter(
-									x => e.target.id !== x
+									(x) => e.target.id !== x
 								),
 								statusColor: this.state.statusColor.filter(
-									x => e.target.id !== x
-								)
+									(x) => e.target.id !== x
+								),
 							});
 						}}
 					/>
@@ -150,12 +148,14 @@ class ProductPage extends Component {
 					<i
 						id={size}
 						className='icon close'
-						onClick={e => {
+						onClick={(e) => {
 							this.setState({
 								selectedSize: this.state.selectedSize.filter(
-									x => e.target.id !== x
+									(x) => e.target.id !== x
 								),
-								statusSize: this.state.statusSize.filter(x => e.target.id !== x)
+								statusSize: this.state.statusSize.filter(
+									(x) => e.target.id !== x
+								),
 							});
 						}}
 					/>
@@ -212,17 +212,17 @@ class ProductPage extends Component {
 		);
 	}
 }
-const mapDispatchToProps = dispatch => ({
-	fetchCategoryProd: data => dispatch(fetchCategoryProd(data)),
-	fetchProdDetails: data => dispatch(fetchProdDetails(data)),
-	fetchProd: data => dispatch(fetchProd(data)),
-	fetchProdReviews: data => dispatch(fetchProdReviews(data))
+const mapDispatchToProps = (dispatch) => ({
+	fetchCategoryProd: (data) => dispatch(fetchCategoryProd(data)),
+	fetchProdDetails: (data) => dispatch(fetchProdDetails(data)),
+	fetchProd: (data) => dispatch(fetchProd(data)),
+	fetchProdReviews: (data) => dispatch(fetchProdReviews(data)),
 });
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
 	return {
 		ecomSelCatProd: state.ecomSelCat.selProd,
 		colorAttr: state.ecomdata.colorAttr,
-		sizeAttr: state.ecomdata.sizeAttr
+		sizeAttr: state.ecomdata.sizeAttr,
 	};
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ProductPage);
