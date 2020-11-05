@@ -8,10 +8,10 @@ import {
 	fetchCategoryProd,
 	fetchProdDetails,
 	fetchProd,
-	fetchProdReviews
+	fetchProdReviews,
 } from '../../actions';
-const ProductList = props => {
-	console.log('TEST ProductList');
+const ProductList = (props) => {
+	// console.log('TEST ProductList');
 	const { rows } = props.ecomSelCatProd;
 	const [products, setProducts] = useState([]);
 	const [statusColor, setStatusColor] = useState('');
@@ -19,7 +19,7 @@ const ProductList = props => {
 	const [selectedPrice, setSelectedPrice] = useState('');
 	const [selectedColor, setSelectedColor] = useState([]);
 	const [selectedSize, setSelectedSize] = useState([]);
-	const prodDetails = e => {
+	const prodDetails = (e) => {
 		const { id } = e.target;
 		props.fetchCategoryProd(id);
 		props.fetchProd(id);
@@ -37,7 +37,7 @@ const ProductList = props => {
 				description,
 				discounted_price,
 				price,
-				thumbnail
+				thumbnail,
 			}) => {
 				return (
 					<Link
@@ -48,7 +48,9 @@ const ProductList = props => {
 						<div className='image' onClick={prodDetails}>
 							<img
 								id={product_id}
-								src={require(`../../assets/product_images/${thumbnail}`)}
+								src={Object.values(
+									require(`../../assets/product_images/${thumbnail}`)
+								)}
 								alt={thumbnail}
 							/>
 						</div>
@@ -67,7 +69,7 @@ const ProductList = props => {
 			}
 		);
 	};
-	const handleSort = e => {
+	const handleSort = (e) => {
 		const { id, textContent } = e.target;
 		let filteredproducts = [];
 
@@ -108,11 +110,11 @@ const ProductList = props => {
 		if (!props.colorAttr.length) {
 			return <div>Loading....</div>;
 		}
-		return props.colorAttr.map(attr => {
+		return props.colorAttr.map((attr) => {
 			return (
 				<button
 					key={attr.attribute_value_id}
-					onClick={e => {
+					onClick={(e) => {
 						setSelectedColor(_.uniq([...selectedColor, e.target.id]));
 						setStatusColor(_.uniq([...statusColor, e.target.id]));
 					}}
@@ -127,11 +129,11 @@ const ProductList = props => {
 		if (!props.sizeAttr.length) {
 			return <div>Loading...</div>;
 		}
-		return props.sizeAttr.map(attr => {
+		return props.sizeAttr.map((attr) => {
 			return (
 				<button
 					id={attr.value}
-					onClick={e => {
+					onClick={(e) => {
 						setSelectedSize(_.uniq([...selectedSize, e.target.id]));
 						setStatusSize(_.uniq([...statusSize, e.target.id]));
 					}}
@@ -157,9 +159,9 @@ const ProductList = props => {
 					<i
 						id={color}
 						className='icon close'
-						onClick={e => {
-							setSelectedColor(selectedColor.filter(x => e.target.id !== x));
-							setStatusColor(statusColor.filter(x => e.target.id !== x));
+						onClick={(e) => {
+							setSelectedColor(selectedColor.filter((x) => e.target.id !== x));
+							setStatusColor(statusColor.filter((x) => e.target.id !== x));
 						}}
 					/>
 				</div>
@@ -179,9 +181,9 @@ const ProductList = props => {
 					<i
 						id={size}
 						className='icon close'
-						onClick={e => {
-							setSelectedSize(selectedSize.filter(x => e.target.id !== x));
-							setStatusSize(statusSize.filter(x => e.target.id !== x));
+						onClick={(e) => {
+							setSelectedSize(selectedSize.filter((x) => e.target.id !== x));
+							setStatusSize(statusSize.filter((x) => e.target.id !== x));
 						}}
 					/>
 				</div>
@@ -198,7 +200,7 @@ const ProductList = props => {
 				{selectedPrice}
 				<i
 					className='icon close'
-					onClick={e => {
+					onClick={(e) => {
 						setSelectedPrice('');
 						console.log('cancel: ', rows);
 						setProducts(rows);
@@ -266,17 +268,17 @@ const ProductList = props => {
 		</div>
 	);
 };
-const mapDispatchToProps = dispatch => ({
-	fetchCategoryProd: data => dispatch(fetchCategoryProd(data)),
-	fetchProdDetails: data => dispatch(fetchProdDetails(data)),
-	fetchProd: data => dispatch(fetchProd(data)),
-	fetchProdReviews: data => dispatch(fetchProdReviews(data))
+const mapDispatchToProps = (dispatch) => ({
+	fetchCategoryProd: (data) => dispatch(fetchCategoryProd(data)),
+	fetchProdDetails: (data) => dispatch(fetchProdDetails(data)),
+	fetchProd: (data) => dispatch(fetchProd(data)),
+	fetchProdReviews: (data) => dispatch(fetchProdReviews(data)),
 });
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
 	return {
 		ecomSelCatProd: state.ecomSelCat.selProd,
 		colorAttr: state.ecomdata.colorAttr,
-		sizeAttr: state.ecomdata.sizeAttr
+		sizeAttr: state.ecomdata.sizeAttr,
 	};
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
