@@ -1,6 +1,4 @@
 /** @format */
-
-// import React from 'react';
 import RainBow from '../hoc/RainBow';
 import PropTypes from 'prop-types';
 
@@ -12,6 +10,6 @@ const CartPage = () => {
 	);
 };
 CartPage.propTypes = {
-	inputVal: PropTypes.string
+	inputVal: PropTypes.string,
 };
 export default RainBow(CartPage);
