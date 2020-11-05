@@ -4,15 +4,15 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchDepartments } from '../../actions';
 
-const MainPage = props => {
-	const departments = useSelector(state => state.ecomdata.departments);
+const MainPage = (props) => {
+	const departments = useSelector((state) => state.ecomdata.departments);
 	const dispatch = useDispatch();
 	useEffect(() => {
 		// console.log('mainpage', departments);
 		if (!departments) {
 			dispatch(fetchDepartments());
 		}
-	}, []);
+	}, [departments, dispatch]);
 	console.log('MainPage : ', departments);
 	// constructor(props) {
 	// 	super(props);
@@ -29,17 +29,18 @@ const MainPage = props => {
 	// }
 	return (
 		<>
-			<div className='ui vertical stripe segment'>
+			<div className='ui vertical stripe segment inverted'>
 				<div className='ui middle aligned stackable grid container'>
 					<div className='row'>
 						<div className='eight wide column'>
 							<h1 className='ui header'>Shop By Category</h1>
-							<a className='ui huge button'>Check Them Out</a>
+							<button className='ui huge button'>Check Them Out</button>
 						</div>
 						<div className='six wide right floated column'>
 							<img
 								src='https://via.placeholder.com/400x300.png?text=Cat.1'
 								className='ui large bordered rounded image'
+								alt='placeholder'
 							/>
 						</div>
 					</div>
@@ -60,6 +61,7 @@ const MainPage = props => {
 								<img
 									src='https://via.placeholder.com/400x300.png?text=Cat.1'
 									className='ui large bordered rounded image'
+									alt='placeholder'
 								/>
 							</p>
 						</div>
@@ -76,9 +78,9 @@ const MainPage = props => {
 						amounts of whitespace and generic content that can seem massive,
 						monolithic and worth your attention.
 					</p>
-					<a className='ui large button'>Read More</a>
+					<button className='ui large button'>Read More</button>
 					<h4 className='ui horizontal header divider'>
-						<a href='#'>Case Studies</a>
+						<button clssName='ui'>Case Studies</button>
 					</h4>
 					<h3 className='ui header'>Did We Tell You About Our Bananas?</h3>
 					<p>
