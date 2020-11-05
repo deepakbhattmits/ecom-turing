@@ -1,13 +1,11 @@
 /** @format */
-
-// import React, { Component } from 'react';
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import {
 	fetchCategoryProd,
 	fetchCategoriesData,
 	fetchAttributeSize,
-	fetchAttributeColor
+	fetchAttributeColor,
 } from '../../actions';
 import ProductList from './ProductList';
 
@@ -33,17 +31,17 @@ class CategoryPage extends Component {
 		);
 	}
 }
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
 	fetchAttributeSize: () => dispatch(fetchAttributeSize()),
 	fetchAttributeColor: () => dispatch(fetchAttributeColor()),
-	fetchCategoryProd: data => dispatch(fetchCategoryProd(data)),
-	fetchCategoriesData: data => dispatch(fetchCategoriesData(data))
+	fetchCategoryProd: (data) => dispatch(fetchCategoryProd(data)),
+	fetchCategoriesData: (data) => dispatch(fetchCategoriesData(data)),
 });
 const mapStateToProps = (state, ownProps) => {
 	console.log('ownprops : ', ownProps);
 	return {
 		ecomdata: state.ecomdata[ownProps.match.params.id],
-		ecomSelCat: state.ecomSelCat
+		ecomSelCat: state.ecomSelCat,
 	};
 };
 // fetchCategoriesData
