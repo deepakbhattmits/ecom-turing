@@ -3,17 +3,16 @@
 import { useState, useEffect } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import history from '../../history';
-
 import {
 	fetchDepartments,
 	fetchCategories,
 	fetchCategoriesData,
-	fetchCategoryProd
+	fetchCategoryProd,
 } from '../../actions';
 
-const Navigation = props => {
-	console.log('TEST');
-	const departments = useSelector(state => state.ecomdata.departments);
+const Navigation = (props) => {
+	// console.log('TEST');
+	const departments = useSelector((state) => state.ecomdata.departments);
 	const dispatch = useDispatch();
 	const [visible, setVisible] = useState(false);
 	const [active, setActive] = useState(false);
@@ -22,12 +21,12 @@ const Navigation = props => {
 			props.fetchDepartments();
 		}
 	}, [props]);
-	const departmentClick = e => {
+	const departmentClick = (e) => {
 		props.fetchCategories(e.target.id);
 		setVisible(!visible);
 		setActive(!active);
 	};
-	const cat = e => {
+	const cat = (e) => {
 		const { id } = e.target;
 		history.push(`/ecom/categories/${id}`);
 		setVisible(false);
@@ -51,7 +50,7 @@ const Navigation = props => {
 						className={`text ${
 							Object.values(props.categories).length > 0
 								? props.categories.some(
-										item => item.department_id === department_id
+										(item) => item.department_id === department_id
 								  )
 									? active
 										? 'active'
@@ -77,7 +76,7 @@ const Navigation = props => {
 						className={`menu transition ${
 							Object.values(props.categories).length > 0
 								? props.categories.some(
-										item => item.department_id === department_id
+										(item) => item.department_id === department_id
 								  )
 									? visible
 										? 'visible'
@@ -109,16 +108,16 @@ const Navigation = props => {
 		</>
 	);
 };
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
 	fetchDepartments: () => dispatch(fetchDepartments()),
-	fetchCategories: data => dispatch(fetchCategories(data)),
-	fetchCategoriesData: data => dispatch(fetchCategoriesData(data)),
-	fetchCategoryProd: data => dispatch(fetchCategoryProd(data))
+	fetchCategories: (data) => dispatch(fetchCategories(data)),
+	fetchCategoriesData: (data) => dispatch(fetchCategoriesData(data)),
+	fetchCategoryProd: (data) => dispatch(fetchCategoryProd(data)),
 });
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
 	return {
 		categories: state.ecomdata.departmentCategory,
-		departments: state.ecomdata.departments
+		departments: state.ecomdata.departments,
 	};
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Navigation);
