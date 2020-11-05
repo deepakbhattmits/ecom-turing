@@ -1,6 +1,4 @@
 /** @format */
-
-// import React, { Component } from 'react';
 import { Component } from 'react';
 import _ from 'lodash';
 
@@ -11,7 +9,7 @@ class ReviewPage extends Component {
 			<div className='ui relaxed divided list'>
 				<div className='item'>
 					<div className='ui large star rating'>
-						{_.times(this.props.ratings, i => (
+						{_.times(this.props.ratings, (i) => (
 							<i className='icon yellow' key={i} />
 						))}
 					</div>
