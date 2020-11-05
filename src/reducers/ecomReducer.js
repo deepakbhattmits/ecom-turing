@@ -1,8 +1,8 @@
 /** @format */
 
-// import _ from 'lodash';
+//  import _ from 'lodash';
 import { ecomShop } from '../constants/types';
-const ecomReducer= (
+const ecomReducer = (
 	state = {
 		shopingCart: {},
 		uniqueCartId: {},
@@ -15,7 +15,7 @@ const ecomReducer= (
 		selProdDetails: { color: {}, size: {} },
 		selProdData: {},
 		selProdReview: {},
-		searchResult: {}
+		searchResult: {},
 	},
 	action
 ) => {
@@ -35,7 +35,7 @@ const ecomReducer= (
 		case ecomShop.FETCH_CATEGORY_PROD:
 			return Object.assign({}, state, { selProd: action.payload });
 		case ecomShop.FETCH_PROD_DETAIL:
-			action.payload.forEach(element => {
+			action.payload.forEach((element) => {
 				if (element.attribute_name === 'Color') {
 					colorArr.push(element);
 				} else if (element.attribute_name === 'Size') {
@@ -43,7 +43,7 @@ const ecomReducer= (
 				}
 			});
 			return Object.assign({}, state, {
-				selProdDetails: { color: colorArr, size: sizeArr }
+				selProdDetails: { color: colorArr, size: sizeArr },
 			});
 		case ecomShop.FETCH_PROD:
 			return Object.assign({}, state, { selProdData: action.payload });
