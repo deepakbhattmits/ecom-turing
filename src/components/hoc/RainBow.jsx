@@ -1,13 +1,10 @@
 /** @format */
-
-// import React from 'react';
-
-const RainBow = WrappedComponent => {
+const RainBow = (WrappedComponent) => {
 	const colours = ['red', 'blue', 'green', 'pink', 'cyan'];
 	const randomColour = colours[Math.floor(Math.random() * 4)];
 	const textColour = '#fff';
 	const className = randomColour + '--text';
-	return props => {
+	return (props) => {
 		return (
 			<div
 				className={`ui section ${className}`}
