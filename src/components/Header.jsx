@@ -1,17 +1,16 @@
 /** @format */
 
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Navigation from './ecom/Navigation';
 import { searchQuery } from '../actions';
 // import ListExample from './ListExample';
-const Header = props => {
-	// console.log('TEST :> ', props);
+const Header = (props) => {
 	const myRef = useRef(null);
 	const cartCount = useState()[0];
 	const [value, setValue] = useState('');
-	const queryString = e => {
+	const queryString = (e) => {
 		setValue(e.target.value);
 		props.searchQuery(value);
 	};
@@ -20,7 +19,7 @@ const Header = props => {
 	};
 	const moveFocus = () => {
 		const node = myRef.current;
-		node.addEventListener('keydown', function(e) {
+		node.addEventListener('keydown', function (e) {
 			const active = document.activeElement;
 			if (e.keyCode === 40 && active.nextSibling) {
 				active.nextSibling.focus();
@@ -89,7 +88,7 @@ const Header = props => {
 	//     }
 	//     handleClickOutside();
 	//   };
-	const handleClickOutside = event => {
+	const handleClickOutside = (event) => {
 		// console.log('outside TEST : ', myRef);
 	};
 	// console.log(props.selProdData);
@@ -103,7 +102,7 @@ const Header = props => {
 	//   }
 	// },[clearInput, props, value]);
 	useEffect(() => {
-		const callback = e => {
+		const callback = (e) => {
 			// console.log(e.keyCode)
 			if (e.keyCode === 27) {
 				clearInput();
@@ -133,7 +132,7 @@ const Header = props => {
 								color: '#fff',
 								fontWeight: 'bolder',
 								textTransform: 'uppercase',
-								letterSpacing: '.4rem'
+								letterSpacing: '.4rem',
 							}}>
 							shopmate
 						</span>
@@ -189,13 +188,13 @@ const Header = props => {
 		</header>
 	);
 };
-const mapDispatchToProps = dispatch => ({
-	searchQuery: data => dispatch(searchQuery(data))
+const mapDispatchToProps = (dispatch) => ({
+	searchQuery: (data) => dispatch(searchQuery(data)),
 });
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
 	return {
 		searchResult: state.ecomdata.searchResult,
-		selectedProd: state.ecomdata.selectedProdData
+		selectedProd: state.ecomdata.selectedProdData,
 	};
 };
 
