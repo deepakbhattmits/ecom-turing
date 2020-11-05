@@ -13,7 +13,7 @@ import {
 	fetchProd,
 	fetchProdReviews,
 	addToCart,
-	addShoppingCart
+	addShoppingCart,
 } from '../../actions';
 
 class ProdDetails extends Component {
@@ -28,9 +28,9 @@ class ProdDetails extends Component {
 		quantity: 1,
 		aliceResponsive: {
 			0: { items: 1 },
-			1024: { items: 3 }
+			1024: { items: 3 },
 		},
-		cartData: [{}]
+		cartData: [{}],
 	};
 	componentDidMount() {
 		const prod_id =
@@ -60,13 +60,13 @@ class ProdDetails extends Component {
 	};
 	renderProductColor() {
 		if (!this.props.prodsAttr.color.length) {
-			return <div>Loading....</div>;
+			return <div>Loading...</div>;
 		}
-		return this.props.prodsAttr.color.map(attr => {
+		return this.props.prodsAttr.color.map((attr) => {
 			return (
 				<button
 					key={attr.attribute_value_id}
-					onClick={e => {
+					onClick={(e) => {
 						this.setState({ color: e.target.id });
 					}}
 					id={attr.attribute_value}
@@ -81,11 +81,11 @@ class ProdDetails extends Component {
 		if (!this.props.prodsAttr.size.length) {
 			return <div>Loading...</div>;
 		}
-		return this.props.prodsAttr.size.map(attr => {
+		return this.props.prodsAttr.size.map((attr) => {
 			return (
 				<button
 					id={attr.attribute_value}
-					onClick={e => {
+					onClick={(e) => {
 						this.setState({ size: e.target.id });
 					}}
 					className={`ui button ${attr.attribute_name}`}
@@ -132,9 +132,9 @@ class ProdDetails extends Component {
 										this.state.quantity * this.props.prodData.discounted_price
 									).toFixed(2)
 							  )
-							: ''
-					}
-				]
+							: '',
+					},
+				],
 			},
 			() => {
 				this.validate();
@@ -192,7 +192,7 @@ class ProdDetails extends Component {
 			discounted_price,
 			image,
 			image_2,
-			thumbnail
+			thumbnail,
 		} = this.props && this.props.prodData ? this.props.prodData : '';
 		var items = [];
 		const graphImage = image
@@ -205,7 +205,7 @@ class ProdDetails extends Component {
 			? require(`../../assets/product_images/${thumbnail}`)
 			: '';
 		items = [...items, Aimage_2, Athumbnail];
-		const average = _.meanBy(this.props.prodReview, p => p.rating);
+		const average = _.meanBy(this.props.prodReview, (p) => p.rating);
 		const round = _.round(average, 2);
 		return (
 			<div className={`ui grid left aligned`}>
@@ -215,7 +215,7 @@ class ProdDetails extends Component {
 							<img
 								className='ui fluid image'
 								id={product_id}
-								src={graphImage}
+								src={Object.values(graphImage)}
 								alt={thumbnail}
 							/>
 						</div>
@@ -233,17 +233,17 @@ class ProdDetails extends Component {
 							onSlideChange={this.onSlideChange}
 							onSlideChanged={this.onSlideChanged}>
 							<img
-								src={graphImage}
+								src={Object.values(graphImage)}
 								className='ui small image'
 								alt={description}
 							/>
 							<img
-								src={Aimage_2}
+								src={Object.values(Aimage_2)}
 								className='ui small image'
 								alt={description}
 							/>
 							<img
-								src={Athumbnail}
+								src={Object.values(Athumbnail)}
 								className='ui small image'
 								alt={description}
 							/>
@@ -257,11 +257,11 @@ class ProdDetails extends Component {
 								<Fragment>
 									<button
 										className='button basic ui'
-										onClick={e => {
+										onClick={(e) => {
 											this.setState({ status: !this.state.status });
 										}}>
 										<div className='ui large star rating'>
-											{_.times(round, i => (
+											{_.times(round, (i) => (
 												<i id={round} className='icon yellow' key={i} />
 											))}
 										</div>
@@ -293,7 +293,7 @@ class ProdDetails extends Component {
 							<div className='ui search focus'>
 								<button
 									className='ui circular icon button'
-									onClick={e => {
+									onClick={(e) => {
 										this.setState({ quantity: this.state.quantity + 1 });
 									}}>
 									<i className='icon plus'></i>
@@ -301,19 +301,19 @@ class ProdDetails extends Component {
 								<input
 									className='prompt'
 									style={{ textAlign: 'center' }}
-									onChange={e => {
+									onChange={(e) => {
 										this.setState({ quantity: this.state.quantity });
 									}}
 									value={this.state.quantity}
 								/>
 								<button
 									className='ui circular icon button'
-									onClick={e => {
+									onClick={(e) => {
 										this.setState({
 											quantity:
 												this.state.quantity >= 2
 													? this.state.quantity - 1
-													: this.state.quantity
+													: this.state.quantity,
 										});
 									}}>
 									<i className='icon minus'></i>
@@ -356,22 +356,22 @@ class ProdDetails extends Component {
 		);
 	}
 }
-const mapDispatchToProps = dispatch => ({
-	fetchProdDetails: data => dispatch(fetchProdDetails(data)),
-	fetchProd: data => dispatch(fetchProd(data)),
-	fetchProdReviews: data => dispatch(fetchProdReviews(data)),
+const mapDispatchToProps = (dispatch) => ({
+	fetchProdDetails: (data) => dispatch(fetchProdDetails(data)),
+	fetchProd: (data) => dispatch(fetchProd(data)),
+	fetchProdReviews: (data) => dispatch(fetchProdReviews(data)),
 	addToCart: () => dispatch(addToCart()),
-	addShoppingCart: data => dispatch(addShoppingCart(data))
+	addShoppingCart: (data) => dispatch(addShoppingCart(data)),
 });
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
 	return {
 		prodsAttr: state.ecomdata.selProdDetails,
 		prodData: state.ecomdata.selProdData,
 		prodReview: state.ecomdata.selProdReview,
-		uniqueCartId: state.ecomdata.uniqueCartId
+		uniqueCartId: state.ecomdata.uniqueCartId,
 	};
 };
 ProdDetails.propTypes = {
-	price: PropTypes.number
+	price: PropTypes.number,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ProdDetails);
