@@ -1,6 +1,4 @@
 /** @format */
-
-// import React, { Component } from 'react';
 import { Component, createRef } from 'react';
 
 class ListExample extends Component {
@@ -14,7 +12,7 @@ class ListExample extends Component {
 	moveFocus() {
 		const node = this.Ref.current;
 		console.log('TEST :', node);
-		node.addEventListener('keydown', function(e) {
+		node.addEventListener('keydown', function (e) {
 			const active = document.activeElement;
 			if (e.keyCode === 40 && active.nextSibling) {
 				active.nextSibling.focus();
