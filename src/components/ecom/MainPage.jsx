@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchDepartments } from '../../actions';
-
+// MainPage
 const MainPage = (props) => {
 	const departments = useSelector((state) => state.ecomdata.departments);
 	const dispatch = useDispatch();
