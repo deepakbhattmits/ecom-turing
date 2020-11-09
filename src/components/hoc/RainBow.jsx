@@ -1,4 +1,5 @@
 /** @format */
+// RainBow
 const RainBow = (WrappedComponent) => {
 	const colours = ['red', 'blue', 'green', 'pink', 'cyan'];
 	const randomColour = colours[Math.floor(Math.random() * 4)];
