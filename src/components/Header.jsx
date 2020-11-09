@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Navigation from './ecom/Navigation';
 import { searchQuery } from '../actions';
-// import ListExample from './ListExample';
+//import ListExample from './ListExample';
 const Header = (props) => {
 	const myRef = useRef(null);
 	const cartCount = useState()[0];
