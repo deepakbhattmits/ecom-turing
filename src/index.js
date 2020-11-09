@@ -1,6 +1,6 @@
 /** @format */
 
-// import React from 'react';
+//  import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import reduxThunk from 'redux-thunk';
@@ -16,7 +16,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const persistConfig = {
 	key: 'root',
-	storage
+	storage,
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers); // new added line
