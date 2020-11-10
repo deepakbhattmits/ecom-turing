@@ -10,6 +10,38 @@ const Header = (props) => {
 	const myRef = useRef(null);
 	const cartCount = useState()[0];
 	const [value, setValue] = useState('');
+
+	const [mode, setMode] = useState(false);
+	const [active, setActive] = useState('auto');
+	const handleClickMode = (e) => {
+		if (e.target.checked) {
+			document.documentElement.setAttribute('data-theme', 'dark');
+			localStorage.setItem('theme', 'dark');
+			setMode(!mode);
+		} else {
+			document.documentElement.setAttribute('data-theme', 'light');
+			localStorage.setItem('theme', 'light');
+			setMode(!mode);
+		}
+	};
+	const handleMode = (e) => {
+		const name = e.target.textContent;
+		console.log('target', name, e.target);
+		if (name.match(/auto/i)) {
+			document.documentElement.setAttribute('data-theme', 'auto');
+			localStorage.setItem('theme', 'auto');
+			setActive('auto');
+		} else if (name.match(/light/i)) {
+			document.documentElement.setAttribute('data-theme', 'light');
+			localStorage.setItem('theme', 'light');
+			setActive('light');
+		} else if (name.match(/dark/i)) {
+			document.documentElement.setAttribute('data-theme', 'dark');
+			localStorage.setItem('theme', 'dark');
+			setActive('dark');
+		}
+	};
+
 	const queryString = (e) => {
 		setValue(e.target.value);
 		props.searchQuery(value);
@@ -119,6 +151,13 @@ const Header = (props) => {
 			document.removeEventListener('mousedown', handleClickOutside, false);
 		};
 	}, [clearInput, props, value]);
+	useEffect(() => {
+		const theme = localStorage.getItem('theme');
+		if (!!theme) {
+			setActive(theme);
+			document.documentElement.setAttribute('data-theme', theme);
+		}
+	}, []);
 	return (
 		<header>
 			{/* <ListExample /> */}
@@ -185,6 +224,35 @@ const Header = (props) => {
 					</div>
 				</div>
 			</div>
+			<nav>
+				<div className={`theme-switch-wrapper ${mode ? 'dark' : 'light'}`}>
+					<label className='theme-switch' htmlFor='checkbox'>
+						<input type='checkbox' id='checkbox' onClick={handleClickMode} />
+						<div className='slider round'></div>
+					</label>
+
+					<em>Enable {mode ? 'Dark ' : 'Light '}Mode! </em>
+				</div>
+
+				<ul className='switcher-wrapper'>
+					<li className={`${active.match(/auto/i) ? 'active' : ''}`}>
+						<label name='auto' onClick={handleMode}>
+							Auto
+						</label>
+					</li>
+					<li className={`${active.match(/light/i) ? 'active' : ''}`}>
+						<label name='light' onClick={handleMode}>
+							Light
+						</label>
+					</li>
+
+					<li className={`${active.match(/dark/i) ? 'active' : ''}`}>
+						<label name='dark' onClick={handleMode}>
+							Dark
+						</label>
+					</li>
+				</ul>
+			</nav>
 		</header>
 	);
 };
