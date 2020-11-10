@@ -8,7 +8,7 @@ import {
 	fetchAttributeColor,
 } from '../../actions';
 import ProductList from './ProductList';
-
+// todo: functional CategoryPage
 class CategoryPage extends Component {
 	componentDidMount() {
 		this.props.fetchCategoryProd(this.props.match.params.id);
