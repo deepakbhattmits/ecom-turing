@@ -1,7 +1,7 @@
 /** @format */
 import { Component } from 'react';
 import _ from 'lodash';
-// TODO:functional ReviewPage
+// TODO: functional ReviewPage
 class ReviewPage extends Component {
 	render() {
 		// console.log('TEST : ', this.props);
