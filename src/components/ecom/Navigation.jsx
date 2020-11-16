@@ -1,7 +1,7 @@
 /** @format */
 
 import { useState, useEffect } from 'react';
-import { connect, useSelector, useDispatch } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import history from '../../history';
 import {
 	fetchDepartments,
@@ -11,9 +11,8 @@ import {
 } from '../../actions';
 
 const Navigation = (props) => {
-	// console.log('TEST : ');
+	// console.log(' TEST : ');
 	const departments = useSelector((state) => state.ecomdata.departments);
-	const dispatch = useDispatch();
 	const [visible, setVisible] = useState(false);
 	const [active, setActive] = useState(false);
 	useEffect(() => {
