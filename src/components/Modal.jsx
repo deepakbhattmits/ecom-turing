@@ -2,7 +2,7 @@
 import { createPortal } from 'react-dom';
 
 const Modal = (props) => {
-	// console.log('TEST: ', props);
+	//  console.log('TEST: ', props);
 	return createPortal(
 		<div
 			onClick={props.onDismiss}
