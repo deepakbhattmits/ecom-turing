@@ -26,7 +26,7 @@ const Header = (props) => {
 	};
 	const handleMode = (e) => {
 		const name = e.target.textContent;
-		console.log('target', name, e.target);
+		// console.log('target', name, e.target);
 		if (name.match(/auto/i)) {
 			document.documentElement.setAttribute('data-theme', 'auto');
 			localStorage.setItem('theme', 'auto');
