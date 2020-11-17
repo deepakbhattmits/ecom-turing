@@ -1,7 +1,7 @@
 /** @format */
 
 import axios from 'axios';
-// baseURL
+//baseURL
 export default axios.create({
 	baseURL: 'https://backendapi.turing.com/',
 });
