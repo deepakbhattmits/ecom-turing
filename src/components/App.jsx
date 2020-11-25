@@ -1,5 +1,5 @@
 /** @format */
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import createBrowserHistory from '../history';
 import CategoryPage from './ecom/CategoryPage';
@@ -10,8 +10,7 @@ import CartPage from './ecom/CartPage';
 import ProdDetails from './ecom/ProdDetails';
 import ReviewPage from './ecom/ReviewPage';
 const App = () => {
-	// console.log('TEST : > ');
-
+	// console.log('TEST :> ');
 	return (
 		<div className='ui grid center aligned'>
 			<div className='ui fifteen wide column'>
