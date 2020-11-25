@@ -11,7 +11,7 @@ import {
 } from '../../actions';
 
 const Navigation = (props) => {
-	// console.log(' TEST : ');
+	// console.log(' TEST  : ');
 	const departments = useSelector((state) => state.ecomdata.departments);
 	const [visible, setVisible] = useState(false);
 	const [active, setActive] = useState(false);
@@ -19,7 +19,7 @@ const Navigation = (props) => {
 		if (!departments.length) {
 			props.fetchDepartments();
 		}
-	}, [props]);
+	}, [props, departments]);
 	const departmentClick = (e) => {
 		props.fetchCategories(e.target.id);
 		setVisible(!visible);
