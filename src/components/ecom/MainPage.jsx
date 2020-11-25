@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchDepartments } from '../../actions';
-// MainPage
+//  MainPage
 const MainPage = (props) => {
 	const departments = useSelector((state) => state.ecomdata.departments);
 	const dispatch = useDispatch();
@@ -114,7 +114,6 @@ const MainPage = (props) => {
 						gene splicing and combinatory DNA research, but our bananas can
 						really dance.
 					</p>
-					<a className='ui large button'>I'm Still Quite Interested</a>
 				</div>
 			</div>
 		</>
