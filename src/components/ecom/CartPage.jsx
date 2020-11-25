@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const CartPage = () => (
 	<div className='cart-page'>
-		<h1>cart</h1>
+		<h1>cart.</h1>
 	</div>
 );
 CartPage.propTypes = {
