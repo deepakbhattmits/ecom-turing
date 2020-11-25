@@ -8,7 +8,7 @@ import { searchQuery } from '../actions';
 //import ListExample from './ListExample';
 const Header = (props) => {
 	const myRef = useRef(null);
-	const cartCount = useState()[0];
+	// const cartCount = useState()[0];
 	const [value, setValue] = useState('');
 
 	const [mode, setMode] = useState(false);
@@ -26,7 +26,7 @@ const Header = (props) => {
 	};
 	const handleMode = (e) => {
 		const name = e.target.textContent;
-		// console.log('target : ', name, e.target);
+		// console.log('target :', name, e.target);
 		if (name.match(/auto/i)) {
 			document.documentElement.setAttribute('data-theme', 'auto');
 			localStorage.setItem('theme', 'auto');
