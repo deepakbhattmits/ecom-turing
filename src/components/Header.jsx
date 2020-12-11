@@ -8,7 +8,7 @@ import { searchQuery } from '../actions';
 //import ListExample from './ListExample';
 const Header = (props) => {
 	const myRef = useRef(null);
-	//  const cartCount = useState()[0];
+	//   const cartCount = useState()[0];
 	const [value, setValue] = useState('');
 
 	const [mode, setMode] = useState(false);
