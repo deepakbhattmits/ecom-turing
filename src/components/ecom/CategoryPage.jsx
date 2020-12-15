@@ -59,7 +59,7 @@ import {
 import ProductList from './ProductList';
 // todo : functional CategoryPage
 const CategoryPage = (props) => {
-	// console.log('CategoryPage TEST : ', props  );
+	// console.log('CategoryPage TEST :  ', props  );
 	const dispatch = useDispatch();
 	const id = props.match.params.id;
 	const ecomSelCat = useSelector((state) => state.ecomSelCat);
