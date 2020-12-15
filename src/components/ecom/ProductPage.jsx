@@ -9,7 +9,7 @@ import {
 	fetchProd,
 	fetchProdReviews,
 } from '../../actions';
-//   ProductPage
+//     ProductPage
 class ProductPage extends Component {
 	state = {
 		statusColor: '',
