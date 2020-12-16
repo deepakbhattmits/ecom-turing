@@ -1,6 +1,6 @@
 /** @format */
 import _ from 'lodash';
-// ReviewPage
+//ReviewPage
 const ReviewPage = ({ ratings, name }) => (
 	<div className='ui relaxed divided list'>
 		<div className='item'>
