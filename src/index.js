@@ -8,7 +8,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-//    Import Duet Date Picker
+//   Import Duet Date Picker
 import { defineCustomElements } from '@duetds/date-picker/dist/loader';
 import App from './components/App';
 import reducers from './reducers';
