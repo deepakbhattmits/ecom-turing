@@ -15,7 +15,7 @@ import {
 	addToCart,
 	addShoppingCart,
 } from '../../actions';
-//  TODO : functional
+//  TODO :functional
 class ProdDetails extends Component {
 	state = {
 		status: false,
