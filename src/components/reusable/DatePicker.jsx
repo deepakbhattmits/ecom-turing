@@ -11,7 +11,7 @@ function useListener(ref, eventName, handler) {
 		}
 	}, [eventName, handler, ref]);
 }
-//   DatePicker
+//DatePicker
 const DatePicker = ({
 	onChange,
 	onFocus,
