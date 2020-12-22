@@ -2,7 +2,7 @@
 
 please follow below steps
 
-heroku  ----
+heroku ----
 
 npx create-react-app@2.x $APP_NAME
 cd $APP_NAME
