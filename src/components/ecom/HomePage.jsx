@@ -1,4 +1,4 @@
 /** @format */
-const HomePage = () => <>Homepage</>;
+const HomePage = () => <>Homepage.</>;
 
 export default HomePage;
