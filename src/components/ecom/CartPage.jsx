@@ -3,7 +3,7 @@ import RainBow from '../hoc/RainBow';
 import PropTypes from 'prop-types';
 import DatePicker from '../reusable/DatePicker';
 const CartPage = () => {
-	// const [date, setDate] = useState();
+	//  const [date, setDate] = useState();
 	return (
 		<div className='cart-page'>
 			<h1>cart</h1>
