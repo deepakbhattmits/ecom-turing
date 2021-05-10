@@ -225,14 +225,14 @@ const Header = (props) => {
 				</div>
 			</div>
 			<nav>
-				<div className={`theme-switch-wrapper ${mode ? 'dark' : 'light'}`}>
+				{/* <div className={`theme-switch-wrapper ${mode ? 'dark' : 'light'}`}>
 					<label className='theme-switch' htmlFor='checkbox'>
 						<input type='checkbox' id='checkbox' onClick={handleClickMode} />
 						<div className='slider round'></div>
 					</label>
 
 					<em>Enable {mode ? 'Dark ' : 'Light '}Mode! </em>
-				</div>
+				</div> */}
 
 				<ul className='switcher-wrapper'>
 					<li className={`${active.match(/auto/i) ? 'active' : ''}`}>
