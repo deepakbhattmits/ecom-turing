@@ -104,7 +104,7 @@ const MainPage = (props) => {
 					</p>
 					<button className='ui large button'>Read More</button>
 					<h4 className='ui horizontal header divider'>
-						<button clssName='ui'>Case Studies</button>
+						<button className='ui large button'>Case Studies</button>
 					</h4>
 					<h3 className='ui header'>Did We Tell You About Our Bananas?</h3>
 					<p>
