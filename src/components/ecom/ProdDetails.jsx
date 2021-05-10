@@ -212,6 +212,7 @@ class ProdDetails extends Component {
 				<div className='seven wide column'>
 					<div id={product_id}>
 						<div>
+							{console.log('graphImage : ', graphImage)}
 							<img
 								className='ui fluid image'
 								id={product_id}
