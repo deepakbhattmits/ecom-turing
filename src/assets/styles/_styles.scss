@@ -103,6 +103,10 @@ nav {
 	top: 0;
 	transition: 0.4s;
 }
+.ui.header,
+.ui.list > .item .header {
+	color: var(--heading-color);
+}
 
 .slider:before {
 	background-color: #fff;
