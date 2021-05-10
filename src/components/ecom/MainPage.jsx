@@ -13,7 +13,6 @@ const MainPage = (props) => {
 			dispatch(fetchDepartments());
 		}
 	}, [departments, dispatch]);
-	console.log('MainPage : ', departments);
 	// constructor(props) {
 	// 	super(props);
 	// 	// console.logx('constructor');
@@ -29,7 +28,7 @@ const MainPage = (props) => {
 	// }
 	return (
 		<>
-			<section>
+			{/* <section>
 				<article className='post'>
 					<h1>The Principles of Good Design</h1>
 					<p className='post-meta'>
@@ -53,7 +52,7 @@ const MainPage = (props) => {
 						practical question: how do you make good stuff?
 					</p>
 				</article>
-			</section>
+			</section> */}
 			<div className='ui vertical stripe segment inverted'>
 				<div className='ui middle aligned stackable grid container'>
 					<div className='row'>
