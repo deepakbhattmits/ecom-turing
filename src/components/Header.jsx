@@ -11,19 +11,19 @@ const Header = (props) => {
 	//    const cartCount = useState()[0];
 	const [value, setValue] = useState('');
 
-	const [mode, setMode] = useState(false);
+	// const [mode, setMode] = useState(false);
 	const [active, setActive] = useState('auto');
-	const handleClickMode = (e) => {
-		if (e.target.checked) {
-			document.documentElement.setAttribute('data-theme', 'dark');
-			localStorage.setItem('theme', 'dark');
-			setMode(!mode);
-		} else {
-			document.documentElement.setAttribute('data-theme', 'light');
-			localStorage.setItem('theme', 'light');
-			setMode(!mode);
-		}
-	};
+	// const handleClickMode = (e) => {
+	// 	if (e.target.checked) {
+	// 		document.documentElement.setAttribute('data-theme', 'dark');
+	// 		localStorage.setItem('theme', 'dark');
+	// 		setMode(!mode);
+	// 	} else {
+	// 		document.documentElement.setAttribute('data-theme', 'light');
+	// 		localStorage.setItem('theme', 'light');
+	// 		setMode(!mode);
+	// 	}
+	// };
 	const handleMode = (e) => {
 		const name = e.target.textContent;
 		// console.log('target :', name, e.target);
