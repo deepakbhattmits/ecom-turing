@@ -1,55 +1,56 @@
 {
-	"name": "ecom-turing",
-	"version": "0.2.1",
-	"private": true,
-	"engines": {
-		"node": "16.6.0",
-		"yarn": "1.22.5"
-	},
-	"dependencies": {
-		"@duetds/date-picker": "^1.1.0",
-		"axios": "^0.21.0",
-		"lodash": "^4.17.20",
-		"node-sass": "^7.0.0",
-		"react": "^17.0.2",
-		"react-alice-carousel": "^2.0.2",
-		"react-dom": "^17.0.1",
-		"react-redux": "^7.2.2",
-		"react-router": "^5.2.0",
-		"react-router-dom": "^5.2.0",
-		"react-scripts": "^4.0.3",
-		"redux": "^4.0.5",
-		"redux-persist": "^6.0.0",
-		"redux-thunk": "^2.3.0"
-	},
-	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
-	},
-	"eslintConfig": {
-		"extends": "react-app"
-	},
-	"browserslist": [
-		">0.2%",
-		"not dead",
-		"not ie <= 11",
-		"not op_mini all"
-	],
-	"devDependencies": {
-		"babel-plugin-transform-object-rest-spread": "^6.26.0",
-		"eslint": "^7.12.1",
-		"eslint-config-airbnb": "^18.2.0",
-		"eslint-config-node": "^4.1.0",
-		"eslint-config-prettier": "^6.15.0",
-		"eslint-plugin-import": "^2.22.1",
-		"eslint-plugin-jsx-a11y": "^6.4.1",
-		"eslint-plugin-node": "^11.1.0",
-		"eslint-plugin-prettier": "^3.1.4",
-		"eslint-plugin-react": "^7.21.5",
-		"eslint-plugin-react-hooks": "^4.2.0",
-		"prettier": "^2.1.2",
-		"sass-loader": "7.1.0"
-	}
+  "name": "ecom-turing",
+  "version": "0.2.1",
+  "private": true,
+  "proxy": "https://backendapi.turing.com",
+  "engines": {
+    "node": "16.6.0",
+    "yarn": "1.22.5"
+  },
+  "dependencies": {
+    "@duetds/date-picker": "^1.1.0",
+    "axios": "^0.21.0",
+    "lodash": "^4.17.20",
+    "node-sass": "^7.0.0",
+    "react": "^17.0.2",
+    "react-alice-carousel": "^2.0.2",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.3",
+    "redux": "^4.0.5",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.1.2",
+    "sass-loader": "7.1.0"
+  }
 }
