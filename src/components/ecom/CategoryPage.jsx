@@ -48,37 +48,37 @@
 // export default connect(mapStateToProps, mapDispatchToProps)(CategoryPage);
 
 /** @format */
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from "react";
+import { useParams } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
 import {
-	fetchCategoryProd,
-	fetchCategoriesData,
-	fetchAttributeSize,
-	fetchAttributeColor,
-} from '../../actions';
-import ProductList from './ProductList';
-// todo : functional CategoryPage
-const CategoryPage = (props) => {
-	//  console.log('CategoryPage TEST : ', props  );
-	const dispatch = useDispatch();
-	const id = props.match.params.id;
-	const ecomSelCat = useSelector((state) => state.ecomSelCat);
-	const catId = ecomSelCat.selCat.category_id;
-	const catName = ecomSelCat.selCat.name;
-	const catDescription = ecomSelCat.selCat.description;
-	useEffect(() => {
-		dispatch(fetchCategoryProd(id));
-		dispatch(fetchCategoriesData(id));
-		dispatch(fetchAttributeSize());
-		dispatch(fetchAttributeColor());
-	}, [dispatch, id]);
-	return (
-		<div className='ui'>
-			<h2 className='ui center aligned header'>{catName}</h2>
-			<p>{catDescription} </p>
+  fetchCategoryProd,
+  fetchCategoriesData,
+  fetchAttributeSize,
+  fetchAttributeColor,
+} from "../../actions";
+import ProductList from "./ProductList";
+const CategoryPage = () => {
+  const params = useParams();
+  const dispatch = useDispatch();
+  const id = params.id;
+  const ecomSelCat = useSelector((state) => state.ecomSelCat);
+  const catId = ecomSelCat.selCat.category_id;
+  const catName = ecomSelCat.selCat.name;
+  const catDescription = ecomSelCat.selCat.description;
+  useEffect(() => {
+    dispatch(fetchCategoryProd(id));
+    dispatch(fetchCategoriesData(id));
+    dispatch(fetchAttributeSize());
+    dispatch(fetchAttributeColor());
+  }, [dispatch, id]);
+  return (
+    <div className="ui">
+      <h2 className="ui center aligned header">{catName}</h2>
+      <p>{catDescription} </p>
 
-			<ProductList catId={catId} />
-		</div>
-	);
+      <ProductList catId={catId} />
+    </div>
+  );
 };
 export default CategoryPage;
